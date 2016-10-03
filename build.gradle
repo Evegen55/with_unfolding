@@ -13,7 +13,7 @@ repositories {
     mavenCentral()
     //link to a local folders
     flatDir {
-        dirs 'lib'
+        dirs 'lib', 'lib/processing-3.2.1'
     }
 }
 

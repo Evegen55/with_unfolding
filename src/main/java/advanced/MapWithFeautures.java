@@ -37,6 +37,8 @@ public class MapWithFeautures extends PApplet {
         //zoom to a San-Diego
         map.zoomAndPanTo(10, new Location(32.9f, -117.2f));
         MapUtils.createDefaultEventDispatcher(this, map);
+        //set application on a fullscreen
+        this.fullScreen();
     }
 
     @Override

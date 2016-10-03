@@ -2,7 +2,7 @@ package advanced;
 
 import de.fhpotsdam.unfolding.UnfoldingMap;
 import de.fhpotsdam.unfolding.geo.Location;
-import de.fhpotsdam.unfolding.providers.ThunderforestProvider;
+import de.fhpotsdam.unfolding.providers.EsriProvider;
 import de.fhpotsdam.unfolding.utils.MapUtils;
 import processing.core.PApplet;
 
@@ -33,9 +33,9 @@ public class MapWithFeautures extends PApplet {
     @Override
     public void settings() {
         size(SCREEN_WIDTH_FOR_APP, SCREEN_HEIGHT_FOR_APP, JAVA2D);
-        map = new UnfoldingMap(this, new ThunderforestProvider.Landscape());
-        //zoom to a Saint-Petersburg
-        map.zoomAndPanTo(16, new Location(59.985755f, 30.306048f));
+        map = new UnfoldingMap(this, new EsriProvider.NatGeoWorldMap());
+        //zoom to a San-Diego
+        map.zoomAndPanTo(10, new Location(32.9f, -117.2f));
         MapUtils.createDefaultEventDispatcher(this, map);
     }
 

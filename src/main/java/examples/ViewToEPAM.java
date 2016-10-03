@@ -18,8 +18,7 @@ public class ViewToEPAM extends PApplet {
     @Override
     public void settings() {
         size(800, 600, JAVA2D);
-//        map = new UnfoldingMap(this, new EsriProvider.NatGeoWorldMap());
-
+//        map = new UnfoldingMap(this, new EsriProvider.NatGeoWorldMap()); //try it or more - see javaDoc for unfolding
         map = new UnfoldingMap(this, new Microsoft.AerialProvider());
         //zoom to a Saint-Petersburg
         map.zoomAndPanTo(16, new Location(59.985755f, 30.306048f));
@@ -40,6 +39,10 @@ public class ViewToEPAM extends PApplet {
         map.draw();
     }
 
+    /**
+     *
+     * @param args name of classes that have to start
+     */
     public static void main(String[] args) {
         PApplet.main(new String[]{"examples.ViewToEPAM"});
     }

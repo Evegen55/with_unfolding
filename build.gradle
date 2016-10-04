@@ -1,6 +1,7 @@
 plugins {
     id "java"
     id 'maven'
+    id 'application'
 }
 
 group 'my_map'
@@ -53,4 +54,16 @@ dependencies {
     compile name: 'gluegen-rt-natives-linux-armv6hf'
 
     testCompile group: 'junit', name: 'junit', version: '4.11'
+}
+
+mainClassName = 'advanced.MapWithFeautures'
+
+jar {
+    manifest {
+        attributes(
+                'Class-Path': configurations.compile.collect { it.getName() }.join(' '),
+                'Main-Class': 'advanced.MapWithFeautures'
+        )
+    }
+    from configurations.compile.collect { entry -> zipTree(entry) }
 }

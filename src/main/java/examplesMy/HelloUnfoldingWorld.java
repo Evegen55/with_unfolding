@@ -1,4 +1,4 @@
-package examples;
+package examplesMy;
 
 import processing.core.PApplet;
 

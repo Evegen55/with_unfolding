@@ -1,9 +1,7 @@
-package examples;
+package examplesMy;
 
 import org.junit.Test;
 import processing.core.PApplet;
-
-import static org.junit.Assert.*;
 
 /**
  * Created by Evgenii_Lartcev on 10/3/2016.

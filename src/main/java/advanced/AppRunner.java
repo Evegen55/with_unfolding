@@ -1,8 +1,6 @@
 package advanced;
 
-import examples.HelloUnfoldingWorld;
-import examples.OverviewAndDetailMapApp;
-import examples.ViewToEPAM;
+import examplesMy.OverviewAndDetailMapApp;
 import processing.core.PApplet;
 
 /**

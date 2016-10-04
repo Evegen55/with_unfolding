@@ -1,4 +1,4 @@
-package examples;
+package examplesMy;
 
 import de.fhpotsdam.unfolding.UnfoldingMap;
 import de.fhpotsdam.unfolding.events.EventDispatcher;

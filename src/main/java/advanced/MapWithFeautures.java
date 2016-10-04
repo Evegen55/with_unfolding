@@ -2,6 +2,8 @@ package advanced;
 
 import de.fhpotsdam.unfolding.UnfoldingMap;
 import de.fhpotsdam.unfolding.geo.Location;
+import de.fhpotsdam.unfolding.marker.MarkerManager;
+import de.fhpotsdam.unfolding.marker.SimplePointMarker;
 import de.fhpotsdam.unfolding.providers.EsriProvider;
 import de.fhpotsdam.unfolding.utils.MapUtils;
 import processing.core.PApplet;
@@ -35,10 +37,18 @@ public class MapWithFeautures extends PApplet {
         size(SCREEN_WIDTH_FOR_APP, SCREEN_HEIGHT_FOR_APP, JAVA2D);
         map = new UnfoldingMap(this, new EsriProvider.NatGeoWorldMap());
         //zoom to a San-Diego
-        map.zoomAndPanTo(10, new Location(32.9f, -117.2f));
+        Location sanDiego = new Location(32.9f, -117.2f);
+        map.zoomAndPanTo(10, sanDiego);
         MapUtils.createDefaultEventDispatcher(this, map);
         //set application on a fullscreen
-       // this.fullScreen();
+        // this.fullScreen();
+
+        //NOT WORKING!!!
+        SimplePointMarker sanDiegoMarker = new SimplePointMarker(sanDiego);
+        MarkerManager mm = new MarkerManager();
+        mm.addMarker(sanDiegoMarker);
+        map.addMarkerManager(mm);
+        map.addMarkers(sanDiegoMarker);
     }
 
     @Override

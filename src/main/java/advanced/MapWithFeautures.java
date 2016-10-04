@@ -34,7 +34,7 @@ public class MapWithFeautures extends PApplet {
 
     @Override
     public void settings() {
-        size(SCREEN_WIDTH_FOR_APP, SCREEN_HEIGHT_FOR_APP, JAVA2D);
+        size(SCREEN_WIDTH_FOR_APP, SCREEN_HEIGHT_FOR_APP, P2D);
     }
 
     @Override

@@ -13,19 +13,21 @@ import de.fhpotsdam.unfolding.utils.MapUtils;
  */
 public class FadeTwoMapsApp extends PApplet {
 
-	UnfoldingMap map1;
-	UnfoldingMap map2;
+	private UnfoldingMap map1;
+	private UnfoldingMap map2;
 
 	// Create and set variable we need to fade between our two maps.
-	boolean fadeOnce = false;
-	boolean fadeAlways = false;
-	int fadeVal = 255;
-	int fadeDelta = 5;
-	int fadeMin = 0;
-	int fadeMax = 255;
+	private boolean fadeOnce = false;
+	private boolean fadeAlways = false;
+	private int fadeVal = 255;
+	private int fadeDelta = 5;
+	private int fadeMin = 0;
+	private int fadeMax = 255;
 
 	public void settings() {
-		size(600, 400, JAVA2D);
+
+		//size(600, 400, "processing.opengl.PGraphicsOpenGL");
+		size(600, 400, P2D);
 	}
 
 	public void setup() {
@@ -48,22 +50,8 @@ public class FadeTwoMapsApp extends PApplet {
 
 	public void draw() {
 		background(0);
-
 		// Calculate Fade Value
-		if (fadeAlways == true) {
-			fadeOnce = false;
-			if (fadeVal == 0 || fadeVal == 255)
-				fadeDelta = -fadeDelta;
-			fadeVal += fadeDelta;
-		}
-
-		if (fadeOnce == true) {
-			if (fadeVal == 0 || fadeVal == 255) {
-				fadeDelta = -fadeDelta;
-				fadeOnce = false;
-			}
-			fadeVal += fadeDelta;
-		}
+		calculateFadeValue();
 
 		// Draw maps
 		tint(255);
@@ -74,6 +62,23 @@ public class FadeTwoMapsApp extends PApplet {
 		// Description at the Top
 		fill(255);
 		text("Press key '1' to fade once   |   Press key '2' to fade always", 10, 20);
+	}
+
+	private void calculateFadeValue() {
+		if (fadeAlways) {
+			fadeOnce = false;
+			if (fadeVal == fadeMin || fadeVal == fadeMax)
+				fadeDelta = -fadeDelta;
+			fadeVal += fadeDelta;
+		}
+
+		if (fadeOnce) {
+			if (fadeVal == fadeMin || fadeVal == fadeMax) {
+				fadeDelta = -fadeDelta;
+				fadeOnce = false;
+			}
+			fadeVal += fadeDelta;
+		}
 	}
 
 	public void keyPressed() {
@@ -90,6 +95,6 @@ public class FadeTwoMapsApp extends PApplet {
 	}
 
 	public static void main(String[] args) {
-		PApplet.main(new String[] { "de.fhpotsdam.unfolding.examplesForProcessing3_0.animation.FadeTwoMapsApp_1" });
+		PApplet.main(new String[] { FadeTwoMapsApp.class.getName() });
 	}
 }

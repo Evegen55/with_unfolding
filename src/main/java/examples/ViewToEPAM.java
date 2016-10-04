@@ -17,7 +17,7 @@ public class ViewToEPAM extends PApplet {
 
     @Override
     public void settings() {
-        size(800, 600, JAVA2D);
+        size(800, 600, P2D);
 //        map = new UnfoldingMap(this, new EsriProvider.NatGeoWorldMap()); //try it or more - see javaDoc for unfolding
         map = new UnfoldingMap(this, new Microsoft.AerialProvider());
         //zoom to a Saint-Petersburg

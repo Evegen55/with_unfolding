@@ -27,11 +27,13 @@ public class ZoomDependentMarkerApp extends PApplet {
 
 	float oldZoomLevel = 0;
 
-	public void setup() {
-		size(800, 600, OPENGL);
+	public void settings() {
+		size(800, 600, P2D);
+	}
 
+	public void setup() {
 		map = new UnfoldingMap(this);
-		map.zoomAndPanTo(new Location(41.50, -72.38), 5);
+		map.zoomAndPanTo(5, new Location(41.50, -72.38));
 		
 		MapUtils.createDefaultEventDispatcher(this, map);
 
@@ -93,6 +95,10 @@ public class ZoomDependentMarkerApp extends PApplet {
 		markerManager.addMarker(bostonMarker2);
 
 		return markerManager;
+	}
+
+	public static void main(String[] args) {
+		PApplet.main(new String[] { ZoomDependentMarkerApp.class.getName() });
 	}
 
 }

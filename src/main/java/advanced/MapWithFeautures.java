@@ -29,6 +29,7 @@ public class MapWithFeautures extends PApplet {
 
     private static final int SCREEN_WIDTH_FOR_MAP = SCREEN_WIDTH_FOR_APP - SCREEN_WIDTH_FOR_APP / 5;
     private static final int SCREEN_HEIGHT_FOR_MAP = SCREEN_HEIGHT_FOR_APP - SCREEN_HEIGHT_FOR_APP / 15;
+    private static final int ZOOM_LEVEL = 10;
 
     private UnfoldingMap map;
 
@@ -42,12 +43,10 @@ public class MapWithFeautures extends PApplet {
         map = new UnfoldingMap(this, new EsriProvider.NatGeoWorldMap());
         //zoom to a San-Diego
         Location sanDiego = new Location(32.9f, -117.2f);
-        map.zoomAndPanTo(10, sanDiego);
+        map.zoomAndPanTo(ZOOM_LEVEL, sanDiego);
         MapUtils.createDefaultEventDispatcher(this, map);
         //set application on a fullscreen
         // this.fullScreen();
-
-        //NOT WORKING!!!
         SimplePointMarker sanDiegoMarker = new SimplePointMarker(sanDiego);
 //        MarkerManager mm = new MarkerManager();
 //        mm.addMarker(sanDiegoMarker);

@@ -30,10 +30,28 @@ dependencies {
     compile name: 'log4j-1.2.15'
     compile name: 'libTUIO'
     compile name: 'handy'
+    compile name: 'json4processing'
+    //support for OpenGl for different platforms
     compile name: 'gluegen-rt'
     compile name: 'jogl-all'
+    //windows64
     compile name: 'jogl-all-natives-windows-amd64'
     compile name: 'gluegen-rt-natives-windows-amd64'
+    //windows32
+    compile name: 'jogl-all-natives-windows-i586'
+    compile name: 'gluegen-rt-natives-windows-i586'
+    //macosx
+    compile name: 'jogl-all-natives-macosx-universal'
+    compile name: 'gluegen-rt-natives-macosx-universal'
+    //linux32
+    compile name: 'jogl-all-natives-linux-i586'
+    compile name: 'gluegen-rt-natives-linux-i586'
+    //linux64
+    compile name: 'jogl-all-natives-linux-amd64'
+    compile name: 'gluegen-rt-natives-linux-amd64'
+    //linux - armv6hf
+    compile name: 'jogl-all-natives-linux-armv6hf'
+    compile name: 'gluegen-rt-natives-linux-armv6hf'
 
     testCompile group: 'junit', name: 'junit', version: '4.11'
 }

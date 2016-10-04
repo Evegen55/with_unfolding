@@ -36,6 +36,8 @@ public class MapWithFeautures extends PApplet {
     @Override
     public void settings() {
         size(SCREEN_WIDTH_FOR_APP, SCREEN_HEIGHT_FOR_APP, P2D);
+        //set application on a fullscreen
+        this.fullScreen();
     }
 
     @Override
@@ -45,15 +47,8 @@ public class MapWithFeautures extends PApplet {
         Location sanDiego = new Location(32.9f, -117.2f);
         map.zoomAndPanTo(ZOOM_LEVEL, sanDiego);
         MapUtils.createDefaultEventDispatcher(this, map);
-        //set application on a fullscreen
-        // this.fullScreen();
         SimplePointMarker sanDiegoMarker = new SimplePointMarker(sanDiego);
-//        MarkerManager mm = new MarkerManager();
-//        mm.addMarker(sanDiegoMarker);
-//        map.addMarkerManager(mm);
         PGraphics pg = new PGraphics();
-
-        //sanDiegoMarker.setRadius(10);
         sanDiegoMarker.draw(pg, 10, 10);
         map.addMarkers(sanDiegoMarker);
         surface.setResizable(true);

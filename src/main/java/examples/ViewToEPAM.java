@@ -44,7 +44,7 @@ public class ViewToEPAM extends PApplet {
      * @param args name of classes that have to start
      */
     public static void main(String[] args) {
-        PApplet.main(new String[]{"examples.ViewToEPAM"});
+        PApplet.main(new String[]{ViewToEPAM.class.getName()});
     }
 
 }

@@ -2,7 +2,6 @@ package advanced;
 
 import de.fhpotsdam.unfolding.UnfoldingMap;
 import de.fhpotsdam.unfolding.geo.Location;
-import de.fhpotsdam.unfolding.marker.MarkerManager;
 import de.fhpotsdam.unfolding.marker.SimplePointMarker;
 import de.fhpotsdam.unfolding.providers.EsriProvider;
 import de.fhpotsdam.unfolding.utils.MapUtils;
@@ -45,10 +44,11 @@ public class MapWithFeautures extends PApplet {
 
         //NOT WORKING!!!
         SimplePointMarker sanDiegoMarker = new SimplePointMarker(sanDiego);
-        MarkerManager mm = new MarkerManager();
-        mm.addMarker(sanDiegoMarker);
-        map.addMarkerManager(mm);
+//        MarkerManager mm = new MarkerManager();
+//        mm.addMarker(sanDiegoMarker);
+//        map.addMarkerManager(mm);
         map.addMarkers(sanDiegoMarker);
+        map.setTweening(true);
     }
 
     @Override

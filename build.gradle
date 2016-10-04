@@ -13,7 +13,7 @@ repositories {
     mavenCentral()
     //link to a local folders
     flatDir {
-        dirs 'lib', 'lib/processing-3.2.1'
+        dirs 'lib', 'lib/processing-3.2.1', 'lib/lib-extern'
     }
 }
 
@@ -25,9 +25,11 @@ dependencies {
 
     //libs from local folders
     compile name: 'core'
-    compile name: 'unfolding.0.9.6'
+    //compile name: 'unfolding.0.9.6'
+    compile name: 'unfolding.0.9.8beta'
     compile name: 'log4j-1.2.15'
     compile name: 'libTUIO'
+    compile name: 'handy'
 
     testCompile group: 'junit', name: 'junit', version: '4.11'
 }

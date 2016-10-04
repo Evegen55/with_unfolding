@@ -1,10 +1,9 @@
 package advanced;
 
-import examplesMy.OverviewAndDetailMapApp;
 import processing.core.PApplet;
 
 /**
- * Created by Evgenii_Lartcev on 10/4/2016.
+ * @author Evgenii_Lartcev (10/4/2016).
  */
 public class AppRunner {
 
@@ -13,10 +12,9 @@ public class AppRunner {
      */
     public static void main(String[] args) {
         PApplet.main(new String[]{
-                //MapWithFeautures.class.getName(),
-                //ViewToEPAM.class.getName(),
-                //HelloUnfoldingWorld.class.getName()
-                OverviewAndDetailMapApp.class.getName(),
+                        MapWithFeautures.class.getName(),
+                        //ViewToEPAM.class.getName(),
+                        //HelloUnfoldingWorld.class.getName()
                 }
         );
     }

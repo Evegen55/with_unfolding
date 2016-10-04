@@ -17,7 +17,7 @@ public class BarScaleApp extends PApplet {
 	BarScaleUI barScale;
 
 	public void settings() {
-		size(800, 600, P2D);
+		size(800, 600, JAVA2D);
 	}
 
 	public void setup() {

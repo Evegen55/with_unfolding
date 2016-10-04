@@ -27,6 +27,7 @@ dependencies {
     compile name: 'core'
     compile name: 'unfolding.0.9.6'
     compile name: 'log4j-1.2.15'
+    compile name: 'libTUIO'
 
     testCompile group: 'junit', name: 'junit', version: '4.11'
 }

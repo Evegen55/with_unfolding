@@ -12,7 +12,7 @@ public class HelloUnfoldingWorldTest {
 
     @Test
     public void testTest() {
-        PApplet.main(new String[] { "examples.HelloUnfoldingWorld" });
+        PApplet.main(new String[] { "examplesForProcessing2_0.HelloUnfoldingWorld" });
     }
 
 }

@@ -5,8 +5,6 @@ import processing.core.PApplet;
 /**
  * @author Evgenii_Lartcev
  * Hello Unfolding World.
- * <p>
- * Download the distribution with examples for many more examples and features.
  */
 public class HelloUnfoldingWorld extends PApplet {
 
@@ -21,7 +19,7 @@ public class HelloUnfoldingWorld extends PApplet {
     }
 
     public static void main(String[] args) {
-        PApplet.main(new String[]{"examples.HelloUnfoldingWorld"});
+        PApplet.main(new String[]{"examplesForProcessing2_0.HelloUnfoldingWorld"});
     }
 
 }

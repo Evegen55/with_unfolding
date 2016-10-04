@@ -1,6 +1,7 @@
 package advanced;
 
 import examples.HelloUnfoldingWorld;
+import examples.OverviewAndDetailMapApp;
 import examples.ViewToEPAM;
 import processing.core.PApplet;
 
@@ -14,9 +15,10 @@ public class AppRunner {
      */
     public static void main(String[] args) {
         PApplet.main(new String[]{
-                MapWithFeautures.class.getName(),
+                //MapWithFeautures.class.getName(),
                 //ViewToEPAM.class.getName(),
                 //HelloUnfoldingWorld.class.getName()
+                OverviewAndDetailMapApp.class.getName(),
                 }
         );
     }

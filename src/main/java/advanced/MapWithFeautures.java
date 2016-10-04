@@ -38,7 +38,7 @@ public class MapWithFeautures extends PApplet {
         map.zoomAndPanTo(10, new Location(32.9f, -117.2f));
         MapUtils.createDefaultEventDispatcher(this, map);
         //set application on a fullscreen
-        this.fullScreen();
+       // this.fullScreen();
     }
 
     @Override
@@ -56,6 +56,6 @@ public class MapWithFeautures extends PApplet {
      * @param args name of classes that have to start
      */
     public static void main(String[] args) {
-        PApplet.main(new String[]{"advanced.MapWithFeautures"});
+        PApplet.main(new String[]{MapWithFeautures.class.getName()});
     }
 }

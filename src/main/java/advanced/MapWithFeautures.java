@@ -6,6 +6,7 @@ import de.fhpotsdam.unfolding.marker.SimplePointMarker;
 import de.fhpotsdam.unfolding.providers.EsriProvider;
 import de.fhpotsdam.unfolding.utils.MapUtils;
 import processing.core.PApplet;
+import processing.core.PGraphics;
 
 import java.awt.*;
 
@@ -34,6 +35,10 @@ public class MapWithFeautures extends PApplet {
     @Override
     public void settings() {
         size(SCREEN_WIDTH_FOR_APP, SCREEN_HEIGHT_FOR_APP, JAVA2D);
+    }
+
+    @Override
+    public void setup() {
         map = new UnfoldingMap(this, new EsriProvider.NatGeoWorldMap());
         //zoom to a San-Diego
         Location sanDiego = new Location(32.9f, -117.2f);
@@ -47,12 +52,11 @@ public class MapWithFeautures extends PApplet {
 //        MarkerManager mm = new MarkerManager();
 //        mm.addMarker(sanDiegoMarker);
 //        map.addMarkerManager(mm);
-        map.addMarkers(sanDiegoMarker);
-        map.setTweening(true);
-    }
+        PGraphics pg = new PGraphics();
 
-    @Override
-    public void setup() {
+        //sanDiegoMarker.setRadius(10);
+        sanDiegoMarker.draw(pg, 10, 10);
+        map.addMarkers(sanDiegoMarker);
         surface.setResizable(true);
     }
 

@@ -24,20 +24,18 @@ public class MapWithFeautures extends PApplet {
     private static final int SCREEN_WIDTH_FOR_APP = SCREEN_WIDTH - SCREEN_WIDTH / 10;
     private static final int SCREEN_HEIGHT_FOR_APP = SCREEN_HEIGHT - SCREEN_HEIGHT / 10;
 
-    private static final int START_POINT_ON_X_FOR_MAP = SCREEN_WIDTH / 7;
-    private static final int START_POINT_ON_Y_FOR_MAP = SCREEN_HEIGHT / 20;
-
-    private static final int SCREEN_WIDTH_FOR_MAP = SCREEN_WIDTH_FOR_APP - SCREEN_WIDTH_FOR_APP / 5;
-    private static final int SCREEN_HEIGHT_FOR_MAP = SCREEN_HEIGHT_FOR_APP - SCREEN_HEIGHT_FOR_APP / 15;
     private static final int ZOOM_LEVEL = 10;
 
     private UnfoldingMap map;
+    //private SimplePointMarker simplePointMarker;
+    private ImageMarker imgMarker;
+    private Location locationMouse;
 
     @Override
     public void settings() {
         size(SCREEN_WIDTH_FOR_APP, SCREEN_HEIGHT_FOR_APP, P2D);
         //set application on a fullscreen
-        this.fullScreen();
+        //this.fullScreen();
     }
 
     @Override
@@ -57,7 +55,20 @@ public class MapWithFeautures extends PApplet {
     @Override
     public void draw() {
         background(0);
-        map.draw();
+        map.draw(); //first draw map
+        // Shows latitude,longitude at mouse position
+        fill(215, 0, 0, 100);
+        locationMouse = map.getLocation(mouseX, mouseY);
+        text("geo:" + locationMouse.toString(), mouseX, mouseY);
+
+    }
+
+    @Override
+    public void mouseClicked() {
+        imgMarker = new ImageMarker(locationMouse, loadImage("ui/marker_red.png"));
+        //simplePointMarker = new SimplePointMarker(locationMouse);
+        //map.addMarker(simplePointMarker);
+        map.addMarker(imgMarker);
     }
 
     /**

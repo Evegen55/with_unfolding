@@ -1,5 +1,6 @@
 package examplesMy;
 
+import de.fhpotsdam.unfolding.UnfoldingMap;
 import processing.core.PApplet;
 
 /**
@@ -8,9 +9,13 @@ import processing.core.PApplet;
  */
 public class HelloUnfoldingWorld extends PApplet {
 
+    UnfoldingMap map;
+
     @Override
     public void settings() {
-        size(800, 600, JAVA2D);
+        size(800, 600, P2D);
+        map = new UnfoldingMap(this);
+
     }
 
     @Override
@@ -18,8 +23,13 @@ public class HelloUnfoldingWorld extends PApplet {
         surface.setResizable(true);
     }
 
+    @Override
+    public void draw() {
+        map.draw();
+    }
+
     public static void main(String[] args) {
-        PApplet.main(new String[]{"examplesForProcessing2_0.HelloUnfoldingWorld"});
+        PApplet.main(new String[]{HelloUnfoldingWorld.class.getName()});
     }
 
 }

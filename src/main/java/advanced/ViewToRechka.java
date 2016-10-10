@@ -9,7 +9,7 @@ import processing.core.PApplet;
 /**
  * @author Evgenii_Lartcev.
  */
-public class ViewToEPAM extends PApplet {
+public class ViewToRechka extends PApplet {
 
     private UnfoldingMap map;
     //zoom for map
@@ -44,7 +44,7 @@ public class ViewToEPAM extends PApplet {
      * @param args name of classes that have to start
      */
     public static void main(String[] args) {
-        PApplet.main(new String[]{ViewToEPAM.class.getName()});
+        PApplet.main(new String[]{ViewToRechka.class.getName()});
     }
 
 }

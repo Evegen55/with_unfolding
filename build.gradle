@@ -56,13 +56,13 @@ dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.11'
 }
 
-mainClassName = 'advanced.MapWithFeautures'
+mainClassName = 'advanced.AppLauncher'
 
 jar {
     manifest {
         attributes(
                 'Class-Path': configurations.compile.collect { it.getName() }.join(' '),
-                'Main-Class': 'advanced.MapWithFeautures'
+                'Main-Class': mainClassName
         )
     }
     from configurations.compile.collect { entry -> zipTree(entry) }

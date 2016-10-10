@@ -1,4 +1,4 @@
-package examplesMy;
+package advanced;
 
 import de.fhpotsdam.unfolding.UnfoldingMap;
 import de.fhpotsdam.unfolding.geo.Location;
